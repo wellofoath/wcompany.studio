@@ -1,5 +1,5 @@
 import './style.css'
-import * as THREE from "three"
+import * as THREE from 'three'
 
 
 // Material
@@ -59,18 +59,17 @@ fontLoader.load(
                 bevelSegments: 4
             }
         )
-        // textGeometry.center()
+        textGeometry.center()
         const text = new THREE.Mesh(textGeometry, material)
         scene.add(text)
     }
 )
 
 
+
 // Camera
 const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100)
-camera.position.x = 1
-camera.position.y = 1
-camera.position.z = 3
+camera.position.set(1, 1, 2)
 
 scene.add(camera)
 
@@ -81,4 +80,19 @@ const renderer = new THREE.WebGLRenderer({
 renderer.setSize(sizes.width, sizes.height)
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 
-renderer.render(scene, camera)
+/**
+ * Animate
+ */
+const clock = new THREE.Clock()
+
+const tick = () => 
+{
+    const elapsedTime = clock.getElapsedTime()
+
+    // render
+    renderer.render(scene, camera)
+
+    // Call tick again on the next frame
+    window.requestAnimationFrame(tick)
+}
+tick()
