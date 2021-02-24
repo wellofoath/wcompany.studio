@@ -1,9 +1,10 @@
 import './style.css'
 import * as THREE from 'three'
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 
-
-// Material
-const material = new THREE.MeshBasicMaterial()
+/**
+ * Basics
+ */
 
 // Canvas
 const canvas = document.querySelector('canvas.webgl')
@@ -36,6 +37,13 @@ window.addEventListener(
 )
 
 /**
+ * Lights
+ */
+const spotLight = new THREE.SpotLight(0x78ff00, 0.5, 10, Math.PI * 0.1, 0.25, 1)
+spotLight.position.set(0, 2, 3)
+scene.add(spotLight)
+
+/**
  * Objects
  */
 
@@ -49,7 +57,7 @@ fontLoader.load(
             'W', 
             {
                 font: font,
-                size: 0.5,
+                size: 0.7,
                 height: 0.2,
                 curveSegments: 5,
                 bevelEnabled: true,
@@ -65,13 +73,22 @@ fontLoader.load(
     }
 )
 
+// Material
+const material = new THREE.MeshBasicMaterial()
 
-
-// Camera
+/**
+ * Camera
+ */
 const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100)
-camera.position.set(1, 1, 2)
+camera.position.x = 1
+camera.position.y = 1
+camera.position.z = 2
 
 scene.add(camera)
+
+// Controls
+const controls = new OrbitControls(camera, canvas)
+controls.enableDamping = true
 
 // Renderer
 const renderer = new THREE.WebGLRenderer({
@@ -88,6 +105,9 @@ const clock = new THREE.Clock()
 const tick = () => 
 {
     const elapsedTime = clock.getElapsedTime()
+
+    // Update controls
+    controls.update()
 
     // render
     renderer.render(scene, camera)
