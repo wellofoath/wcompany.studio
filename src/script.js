@@ -1,6 +1,7 @@
 import './style.css'
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
+import { SpotLightShadow } from 'three'
 
 /**
  * Basics
@@ -36,11 +37,16 @@ window.addEventListener(
     }
 )
 
+// Material
+const material = new THREE.MeshStandardMaterial()
+material.roughness = 0.4
+
 /**
  * Lights
  */
-const spotLight = new THREE.SpotLight(0x78ff00, 0.5, 10, Math.PI * 0.1, 0.25, 1)
-spotLight.position.set(0, 2, 3)
+
+const spotLight = new THREE.SpotLight(0xffd978, 0.5, 10, Math.PI * 0.15, 0.25, 1)
+spotLight.position.set(0, 0, 1.15)
 scene.add(spotLight)
 
 /**
@@ -57,7 +63,7 @@ fontLoader.load(
             'W', 
             {
                 font: font,
-                size: 0.7,
+                size: 0.5,
                 height: 0.2,
                 curveSegments: 5,
                 bevelEnabled: true,
@@ -73,15 +79,20 @@ fontLoader.load(
     }
 )
 
-// Material
-const material = new THREE.MeshBasicMaterial()
+const plane = new THREE.Mesh(
+    new THREE.PlaneGeometry(10, 10),
+    material
+)
+plane.position.z = - 2
+
+scene.add(plane)
 
 /**
  * Camera
  */
 const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100)
-camera.position.x = 1
-camera.position.y = 1
+// camera.position.x = 1
+// camera.position.y = 1
 camera.position.z = 2
 
 scene.add(camera)
