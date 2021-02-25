@@ -45,9 +45,16 @@ material.roughness = 0.4
  * Lights
  */
 
-const spotLight = new THREE.SpotLight(0xffd978, 0.5, 10, Math.PI * 0.15, 0.25, 1)
+const spotLight = new THREE.SpotLight(0xfce7b6, 0.5, 10, Math.PI * 0.15, 0.25, 1)
 spotLight.position.set(0, 0, 1.15)
-scene.add(spotLight)
+
+const spotLightPink = new THREE.SpotLight(0xfc68f5, 0.5, 10, Math.PI * 0.08, 0.25, 1)
+spotLightPink.position.set(0.1, 0.3, 1.15)
+
+const spotLightBlue = new THREE.SpotLight(0x1c1b6b, 0.5, 20, Math.PI * 0.08, 0.25, 1)
+spotLightBlue.position.set(-0.1, -0.3, 1.15)
+
+scene.add(spotLight, spotLightPink, spotLightBlue)
 
 /**
  * Objects
@@ -63,14 +70,14 @@ fontLoader.load(
             'W', 
             {
                 font: font,
-                size: 0.5,
+                size: 0.45,
                 height: 0.2,
                 curveSegments: 5,
                 bevelEnabled: true,
-                bevelThickness: 0.03,
-                bevelSize: 0.02,
+                bevelThickness: 0.2,
+                bevelSize: 0.04,
                 bevelOffset: 0,
-                bevelSegments: 4
+                bevelSegments: 0
             }
         )
         textGeometry.center()
