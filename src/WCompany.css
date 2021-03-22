@@ -1,0 +1,50 @@
+.flexbox {
+    display: flex;
+    flex-direction: column;
+}
+
+.headerH1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 75px;
+    color: #ffffff;
+    background-color: #000000;
+    padding: 200px 0px;
+    margin: 0;
+}
+
+.introP {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    color: #ffffff;
+    background-color: #000000;
+    padding: 200px 0px;
+    margin: 0;
+}
+
+.contactUsH2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    color: #ffffff;
+    background-color: #000000;
+    padding: 200px 0px 50px 0px;
+    margin: 0;
+}
+
+.contactUsInput {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    background-color: #000000;
+}
+
+.footer {
+    background-color: #000000;
+    padding: 50px;
+}
