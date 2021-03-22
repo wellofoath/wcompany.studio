@@ -11,3 +11,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@font-face {
+  font-family: 'CormorantUnicaseBold';
+  src: local('CormorantUnicaseBold'), url(./typescripts/CormorantUnicaseBold.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'CormorantUnicaseSemiBold';
+  src: local('CormorantUnicaseSemiBold'), url(./typescripts/CormorantUnicaseSemiBold.ttf) format('truetype');
+}

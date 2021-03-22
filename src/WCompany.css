@@ -1,3 +1,7 @@
+body {
+    font-family: CormorantUnicaseSemiBold;
+}
+
 .flexbox {
     display: flex;
     flex-direction: column;
@@ -7,7 +11,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 75px;
+    font-size: 90px;
     color: #ffffff;
     background-color: #000000;
     padding: 200px 0px;
@@ -18,7 +22,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 30px;
+    font-size: 40px;
     color: #ffffff;
     background-color: #000000;
     padding: 200px 0px;
@@ -29,7 +33,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 30px;
+    font-size: 35px;
     color: #ffffff;
     background-color: #000000;
     padding: 200px 0px 50px 0px;
