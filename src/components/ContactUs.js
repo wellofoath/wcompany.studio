@@ -6,10 +6,11 @@ class ContactUs extends Component {
         return (
             <div className="flexbox">
                     <h2 className="contactUsH2">Contact Us</h2>
-                    <div className="flexbox contactUsInput">
-                        <input className="ContactUsTitle" type="text" placeholder="Title"></input>
-                        <textarea className="textarea"></textarea>
-                        <input type="button" placeholder="제출" value="submit"></input>
+                    <div className="flexbox contactUsContainer">
+                        <input className="ContactUsName" type="text" placeholder="Name"></input>
+                        <input className="ContactUsEmail" type="text" placeholder="Email"></input>
+                        <textarea className="ContactUsComments" placeholder="Comments"></textarea>
+                        <input className="ContactUsButton" type="button" placeholder="제출" value="submit"></input>
                     </div>
             </div>
         );
