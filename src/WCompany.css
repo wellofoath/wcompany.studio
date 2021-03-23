@@ -7,15 +7,33 @@ body {
     flex-direction: column;
 }
 
+.headerContainer {
+    background-color: #000000;
+    height: 100vh;
+}
+
 .headerH1 {
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 90px;
     color: #ffffff;
-    background-color: #000000;
-    padding: 200px 0px;
     margin: 0;
+    height: 100vh;
+
+    animation-name: slideIn;
+    animation-duration: 0.9s;      
+}
+
+@keyframes slideIn {
+    from {
+        margin-top: -25px;
+        opacity: 0;
+    }
+    to {
+        margin-top: 0px;
+        opacity: 1;
+    }
 }
 
 .introP {
@@ -46,6 +64,24 @@ body {
     align-items: center;
     color: #ffffff;
     background-color: #000000;
+}
+
+.ContactUsTitle {
+    display: flex;
+    border-top: none;
+    padding: 0px;
+    margin: 0px 0px 2.5px 0px;
+    min-width: 400px;
+    min-height: 25px;
+}
+
+.textarea {
+    display: flex;
+    padding: 0px;
+    margin: 2.5px 0px 20px 0px;
+    border: 1px solid;
+    min-width: 400px;
+    min-height: 100px;
 }
 
 .footer {
